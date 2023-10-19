@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
     {
         "repo": "/nyukat/breast_cancer_classifier",
@@ -475,3 +476,6 @@
         "readme_contents": "# Breast-Cancer-Prediction\n\nDiagnosing Malignant versus Benign Breast Tumours via Machine Learning Techniques in High Dimensions\n\nFiles:\nClassification.py : Logistc Regression, SVM and Decision Tree methods to classify data\n"
     }
 ]
+=======
+[]
+>>>>>>> 22dd6f6c12869c348d766d8112faeb316f38a5b6
