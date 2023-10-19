@@ -474,8 +474,4 @@
         "language": "Jupyter Notebook",
         "readme_contents": "# Breast-Cancer-Prediction\n\nDiagnosing Malignant versus Benign Breast Tumours via Machine Learning Techniques in High Dimensions\n\nFiles:\nClassification.py : Logistc Regression, SVM and Decision Tree methods to classify data\n"
     }
-<<<<<<< HEAD
 ]
-=======
-]
->>>>>>> 61bf53ef742ecdf7cbea097d7910d8fd2e28f5a4
