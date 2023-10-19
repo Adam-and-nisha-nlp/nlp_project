@@ -1,5 +1,5 @@
 # nlp_project
-# Project Dsecription
+# Project Description
 A natural language processing classification project designed to predict what programming language is used in Github repos based around breast cancer.
 
 # Project Goal
