@@ -11,5 +11,41 @@ A natural language processing classification project designed to predict what pr
 # Intial Thoughts
 
 
+# The Plan
+- Acquire data:
+    - Scrape Github for repo related breast cancer returning a dataframe with the name of the rep, language used and the readme contentc.
+
+- Prepare data:
+    - Cleaning:
+        - Encode, decode and lowercase text.
+        - Remove punctuation and split text into words.
+        - Lemmatize and remove stopwords.
+
+- Explore data:
+  - Answer the following initial questions:
+ 
+
+
+
+- Modeling:
+
+
+
+
+# Data Dictionary
+
+
+# Steps To Reproduce
+- Clone the repo
+- Use provided link to download the json file and save it in the appropriate path without changing the file name
+- Run notebook
+
+Note: If you would like to recreate the Github scraping and API process we used it is n the wrangle file our repo.
+
+# Takeaways and Conclusions:
+
+
+# Recommendation
+
 
 
