@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import requests
 import json
 from env import github_token, github_username
@@ -248,4 +248,4 @@ def split_function_cat_target(df_name, target_varible_column_name):
 # the test will contain 20% of the data,
 # the validation contain 25%('test_size') of previous train which is 20% of original dataset the same as the test set
 
->>>>>>> 802e515a9ad23ebfbe3604ace19702a305e1b558
+
