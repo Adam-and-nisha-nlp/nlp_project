@@ -1,4 +1,4 @@
-# nlp_project
+# Nlp_project
 
 <img width="395" alt="Screenshot 2023-10-20 at 8 54 05 AM" src="https://github.com/Adam-and-nisha-nlp/nlp_project/assets/136507682/75eb20d3-2acd-412d-b0d2-092f7a956f71">
 
