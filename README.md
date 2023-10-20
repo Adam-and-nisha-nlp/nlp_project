@@ -1,4 +1,7 @@
 # nlp_project
+
+<img width="395" alt="Screenshot 2023-10-20 at 8 54 05 AM" src="https://github.com/Adam-and-nisha-nlp/nlp_project/assets/136507682/75eb20d3-2acd-412d-b0d2-092f7a956f71">
+
 # Project Description
 A natural language processing classification project designed to predict what programming language is used in Github repos based around breast cancer.
 
@@ -33,6 +36,12 @@ A natural language processing classification project designed to predict what pr
 
 
 # Data Dictionary
+| Feature            | Definiton | 
+| :---------------- | :------ | 
+| Repo      |   The name of the repository  | 
+| Language         |  The primary programming language used   | 
+| Readme_Contents    |  The contents of the readme(english language text)  | 
+
 
 
 # Steps To Reproduce
