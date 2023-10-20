@@ -155,11 +155,7 @@ def remove_stopwords(lemma_or_stem, extra_words=[], exclude_words=[]):
     
     stopwords_ls = set(stopwords_ls) - set(exclude_words)
     # adding any stopwords in extra list
-<<<<<<< HEAD
-=======
-    stopwords_ls = stopwords_ls.union(set(extra_words+ ["breast cancer"]))
-    
->>>>>>> 1c2134deb7109c125bdc37e95843a4537b7acd7d
+
     # split words in article
     words = lemma_or_stem.split()
     # remove stopwords from list of words
