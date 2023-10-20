@@ -248,4 +248,15 @@ def split_function_cat_target(df_name, target_varible_column_name):
 # the test will contain 20% of the data,
 # the validation contain 25%('test_size') of previous train which is 20% of original dataset the same as the test set
 
+def plot_bigrams(language,words):
+    word_data = {k[0] + ' ' + k[1]: v for k, v in words.to_dict().items()}
+    
+    word_img = WordCloud(background_color='white', width=800, height=400).generate_from_frequencies(word_data)
+    
+    plt.figure(figsize=(8, 4))
+    plt.imshow(word_img)
+    plt.axis('off')
+    plt.title(f'Top Words for {language}')
+    plt.show()
+
 

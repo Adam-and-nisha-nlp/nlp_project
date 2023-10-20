@@ -146,20 +146,26 @@ def remove_stopwords(lemma_or_stem, extra_words=[], exclude_words=[]):
     Output: parsed_article
     '''
     # save stopwords
+    # Got the list of English stopwords
     stopwords_ls = stopwords.words('english')
+
+    # Added the specified words to the list
+    stopwords_ls.extend(['breast', 'cancer', 'lymph', 'node', 'benign', 'malignant', 'wisconsin', 'diagnostic'])
     # removing any stopwords in exclude list
     stopwords_ls = set(stopwords_ls) - set(exclude_words)
     # adding any stopwords in extra list
-    stopwords_ls = stopwords_ls.union(set(extra_words))
-    
     # split words in article
     words = lemma_or_stem.split()
     # remove stopwords from list of words
     filtered = [word for word in words if word not in stopwords_ls]
     # join words back together
     parsed_article = ' '.join(filtered)
-    
     return parsed_article
+
+
+
+
+
     
 def lemmatize(clean_tokenize):
     '''
@@ -248,4 +254,13 @@ def split_function_cat_target(df_name, target_varible_column_name):
 # the test will contain 20% of the data,
 # the validation contain 25%('test_size') of previous train which is 20% of original dataset the same as the test set
 
-
+def plot_bigrams(language,words):
+    word_data = {k[0] + ' ' + k[1]: v for k, v in words.to_dict().items()}
+    
+    word_img = WordCloud(background_color='white', width=800, height=400).generate_from_frequencies(word_data)
+    
+    plt.figure(figsize=(8, 4))
+    plt.imshow(word_img)
+    plt.axis('off')
+    plt.title(f'Top Words for {language}')
+    plt.show()
