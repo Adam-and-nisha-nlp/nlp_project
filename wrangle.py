@@ -150,7 +150,7 @@ def remove_stopwords(lemma_or_stem, extra_words=[], exclude_words=[]):
     stopwords_ls = stopwords.words('english')
 
     # Added the specified words to the list
-    stopwords_ls.extend(['breast', 'cancer', 'lymph', 'node', 'benign', 'malignant', 'wisconsin', 'diagnostic'])
+    stopwords_ls.extend(['breast', 'cancer', 'lymph', 'node', 'benign', 'malignant', 'wisconsin', 'diagnostic', 'data','dataset','image','model','analysis'])
     # removing any stopwords in exclude list
     
     stopwords_ls = set(stopwords_ls) - set(exclude_words)
