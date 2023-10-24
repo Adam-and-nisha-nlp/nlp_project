@@ -2,100 +2,55 @@
 
 import requests
 import json
+import requests
 
-def acquire_github_repositories(language="python", per_page=100):
-    # Replace these with your own GitHub token and username
-    github_token = "your_github_token"
-    github_username = "your_github_username"
 
-    # Set up API request headers
-    headers = {
-        "Authorization": f"token {github_token}",
-        "User-Agent": github_username
+
+
+
+# Define a function to get repositories based on a query and page
+def get_repositories(query, sort="stars", order="desc", page=1):
+    base_url = "https://api.github.com/search/repositories"
+    params = {
+        "q": query,
+        "sort": sort,
+        "order": order,
+        "per_page": 10,  # You can get up to 100 results per page.
+        "page": page  # Specify the page number
     }
-
-    # Make API requests to get repository names
-    api_url = f"https://api.github.com/search/repositories?q=language:{language}&sort=stars&order=desc&per_page={per_page}"
-    response = requests.get(api_url, headers=headers)
-
+    response = requests.get(base_url, headers=headers, params=params)
     if response.status_code == 200:
-        repositories = response.json()["items"]
-        return repositories
+        return response.json()
     else:
-        print(f"Failed to fetch repository list. Status code: {response.status_code}")
-        return []
+        return None
 
-# Example usage:
-python_repositories = acquire_github_repositories(language="python", per_page=100)
+# Search for breast cancer related repositories and handle pagination
+query = "breast cancer"
+page = 1
 
+# Create a list to collect the repository data
+repository_data = []
 
-#----------------------------------------------------------------------------------
+while page <= 10:
+    response_json = get_repositories(query, page=page)
+    if response_json is None:
+        print(f"Failed to fetch page {page} of repositories.")
+        break
 
+    # Extract and collect repository names
+    for repo in response_json["items"]:
+        repository_data.append({
+            "full_name": repo["full_name"]
+        })
 
-def breast_cancer_repository(query="breast cancer", max_pages=10):
-    # Replace these with your own GitHub token and username
-    github_token = "your_github_token"
-    github_username = "your_github_username"
-
-    # Define the headers with your token and username
-    headers = {
-        "Authorization": f"token {github_token}",
-        "User-Agent": github_username
-    }
-
-    # Define a function to get repositories based on a query and page
-    def get_repositories(query, sort="stars", order="desc", page=1):
-        base_url = "https://api.github.com/search/repositories"
-        params = {
-            "q": query,
-            "sort": sort,
-            "order": order,
-            "per_page": 10,  # You can get up to 100 results per page.
-            "page": page  # Specify the page number
-        }
-        response = requests.get(base_url, headers=headers, params=params)
-        if response.status_code == 200:
-            return response.json()
-        else:
-            return None
-
-    # Create a list to collect the repository data
-    repository_data = []
-
-    page = 1
-    while page <= max_pages:
-        response_json = get_repositories(query, page=page)
-        if response_json is None:
-            print(f"Failed to fetch page {page} of repositories.")
+    # Check if there are more pages
+    if "Link" in response.headers:
+        next_link = response.headers["Link"]
+        if 'rel="next"' not in next_link:
             break
-
-        # Extract and collect repository names
-        for repo in response_json["items"]:
-            repository_data.append({
-                "full_name": repo["full_name"]
-            })
-
-        # Check if there are more pages
-        if "Link" in response.headers:
-            next_link = response.headers["Link"]
-            if 'rel="next"' not in next_link:
-                break
-        else:
-            break
-        page += 1
-
-    # Extract only the repository names from the dictionaries
-    repository_names = [repo_data["full_name"] for repo_data in repository_data]
-
-    # Save the repository names list to a JSON file
-    with open("breast_cancer_repository.json", "w") as json_file:
-        json.dump(repository_names, json_file, indent=2)
-
-    print("Data saved to breast_cancer_repository.json")
-
-# Example usage:
-# breast_cancer_repository(query="breast cancer", max_pages=10)
-
+    else:
+        break
+    page += 1
 
 
 import requests
@@ -341,6 +296,9 @@ def cleaned(df):
     df.language = df.language.apply(lambda x: x if x in top_5 else 'other')
     
     return df
+
+
+
 
 ### functions to split the data##
 
