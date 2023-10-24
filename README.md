@@ -30,6 +30,11 @@ The initial hypothesis assume that Python and R will be known as the predominant
 
 - Explore data:
   - Answer the following initial questions:
+  1.  Are there any words that uniquely identify each language?
+  2.  What are the high percentages words are used in each language?
+  3.  What are some of the most occuring words in each languge?
+  4.  What is the distribution of the languages?
+  
  
 
 
@@ -39,6 +44,10 @@ The initial hypothesis assume that Python and R will be known as the predominant
  - 3 different models
     - Random forest
     - Logistic regression
+
+- Conclusion:
+  - Determine the factors influencing programming language choices.
+  - Develop a model that surpasses the baseline performance.
 
 
 
