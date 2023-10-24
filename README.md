@@ -12,6 +12,10 @@ A natural language processing classification project designed to predict what pr
 - Visualize the reults.
 
 # Intial Thoughts
+The initial hypothesis assume that Python and R will be known as the predominant languages, showing a strong correlation with terms like "data," "machine learning," and "statistics."
+
+
+
 
 
 # The Plan
@@ -31,6 +35,11 @@ A natural language processing classification project designed to predict what pr
 
 
 - Modeling:
+ - 2 different NLP feature extraction: TF-IDF and TF
+ - 3 different models
+    - Random forest
+    - Logistic regression
+
 
 
 
@@ -53,8 +62,19 @@ Note: If you would like to recreate the Github scraping and API process we used 
 
 # Takeaways and Conclusions:
 
+Exploration:
+    - The term "image" is most commonly associated with the "Other" language category.
+"Accuracy" is the predominant term in Python-related content.
+In R-related content, "file" is the most frequent term.
+For HTML, the term "script" prevails.
+    - There is no significant relationship between the word epoch in the ReadMe file with the language Python.
+
+# Modelling
+- Logistic Regression with 60% seem to have the most recall with the best fit data and is above baseline.
+- The model achieved an impressive 60% accuracy, which is 12% above the baseline. However, I would advise against using this model for predicting the language based on the text.
 
 # Recommendation
+- To improve our ability to predict programming languages from word usage, we should utilize a larger dataset. Additional analysis can help us pinpoint and eliminate common terms like "http" that might muddy our results.
 
 
 
